@@ -60,7 +60,7 @@
         { icon: 'mdi-account', text: 'About', to: 'about', color: '#00E676' },
         { icon: 'mdi-trending-up', text: 'Experience', to: 'experience', color: 'deep-orange accent-3' },
         { icon: 'mdi-poll', text: 'Skills', to: 'skills', color: 'light-blue accent-3' },
-        { icon: 'mdi-apps', text: 'Projects', to: 'project', color: 'indigo accent-3' },
+        { icon: 'mdi-apps', text: 'Projects', to: 'projects', color: 'indigo accent-3' },
         { icon: 'mdi-email', text: 'Contact', to: 'contact', color: 'amber accent-3' },
         // {
         //   icon: 'mdi-chevron-up',

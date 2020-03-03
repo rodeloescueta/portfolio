@@ -6,40 +6,6 @@
 
 <script>
 import HeaderTitle from '../components/HeaderTitle.vue'
-// HTML
-// HTML5
-// EJS
-
-// CSS
-// CSS
-// Bootstrap
-// Materialize
-// Stylus
-// Vuetify
-
-// Javascript
-// Javascript
-// ES6
-// Vuejs
-// Nodejs
-// Expressjs
-
-// Database
-// MYSQL
-// CouchDB
-// MongodDB
-// DynamoDB
-
-// AWS
-// Lambda
-// S3
-// Api Gateway
-// Cognito
-
-// Others
-// Webpack
-// Github
-// Gitlab
 
 export default{
     data(){
@@ -51,6 +17,9 @@ export default{
     },
     components: {
         HeaderTitle
+    },
+    mounted(){
+        console.log(this.$router.currentRoute.path)
     }
 }
 </script>
