@@ -19,7 +19,7 @@ export default{
         HeaderTitle
     },
     mounted(){
-        console.log(this.$router.currentRoute.path)
+        // console.log(this.$router.currentRoute.path)
     }
 }
 </script>
