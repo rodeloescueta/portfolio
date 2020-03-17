@@ -13,6 +13,7 @@
             :key="item.heading"
             align="center"
             :to="item.to"
+            @click="title = item.text"
             elevation="1"
           >
             <v-col cols="12" class="pb-0 text-center">
@@ -28,6 +29,7 @@
             :key="item.text"
             link
             :to="item.to"
+            @click="title = item.text"
           >
             <v-list-item-action>
               <v-icon :color="item.color" large>{{ item.icon }}</v-icon>
@@ -41,7 +43,11 @@
         </template>
       </v-list>
     </v-navigation-drawer>
-    <v-content>
+    
+    <v-content class="main">
+      <v-toolbar v-if="title != 'Rodelo Escueta'" height="120" color="#008B8B" dark>
+        <span class="font-weight-thin display-3">{{title}}</span>
+      </v-toolbar>
       <router-view/>
     </v-content>
   </v-app>
@@ -53,6 +59,7 @@
       source: String,
     },
     data: () => ({
+      title: '',
       dialog: false,
       drawer: null,
       items: [
@@ -62,34 +69,15 @@
         { icon: 'mdi-poll', text: 'Skills', to: 'skills', color: 'light-blue accent-3' },
         { icon: 'mdi-apps', text: 'Projects', to: 'projects', color: 'indigo accent-3' },
         { icon: 'mdi-email', text: 'Contact', to: 'contact', color: 'amber accent-3' },
-        // {
-        //   icon: 'mdi-chevron-up',
-        //   'icon-alt': 'mdi-chevron-down',
-        //   text: 'Labels',
-        //   model: true,
-        //   children: [
-        //     { icon: 'mdi-plus', text: 'Create label' },
-        //   ],
-        // },
-        // {
-        //   icon: 'mdi-chevron-up',
-        //   'icon-alt': 'mdi-chevron-down',
-        //   text: 'More',
-        //   model: false,
-        //   children: [
-        //     { text: 'Import' },
-        //     { text: 'Export' },
-        //     { text: 'Print' },
-        //     { text: 'Undo changes' },
-        //     { text: 'Other contacts' },
-        //   ],
-        // },
-        // { icon: 'mdi-settings', text: 'Settings' },
-        // { icon: 'mdi-message', text: 'Send feedback' },
-        // { icon: 'mdi-help-circle', text: 'Help' },
-        // { icon: 'mdi-cellphone-link', text: 'App downloads' },
-        // { icon: 'mdi-keyboard', text: 'Go to the old version' },
       ],
     }),
   }
 </script>
+
+<style>
+.main{
+    background: url('~@/assets/bg.jpg') repeat;
+    /* background-size: cover; */
+}
+
+</style>

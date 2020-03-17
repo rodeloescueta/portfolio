@@ -89,10 +89,3 @@ export default{
 }
 </script>
 
-<style>
-.background{
-    background-image: url('~@/assets/logo.svg');
-    background-size: cover;
-}
-
-</style>
