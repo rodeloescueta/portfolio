@@ -1,6 +1,6 @@
 <template>
-    <!-- <v-container class="background"> -->
     <v-container>
+        <!-- isMobile: {{isMobile}} sizes.skillsIconWidth: {{sizes.skillsIconWidth}} -->
         <template v-for="(skill, i) in skills">
             <v-container :key="i+'s'">
                 <v-card height="250">
@@ -15,9 +15,9 @@
                         </v-col>
                         <template  v-for="(item, i) in skill.data">
                             <v-col class="pl-4" cols="3" :key="i+'h'">
-                                <v-img :height="100" :width="100" :aspect-ratio="1.3" :src="item.src">
+                                <v-img :height="sizes.skillsIconHeight" :width="sizes.skillsIconWidth" :aspect-ratio="1.3" :src="item.src">
                                 </v-img>
-                                <div class="pl-4 subheading">{{item.text}}</div>
+                                <div :class="[isMobile? 'overline': '']">{{item.text}}</div>
                             </v-col>
                         </template>
                         
@@ -32,8 +32,18 @@
 
 <script>
 export default{
+    mounted(){
+        if(this.isMobile){
+            this.sizes.skillsIconHeight = 55
+            this.sizes.skillsIconWidth = 55
+        }
+    },
     data(){
         return{
+            sizes: {
+                skillsIconHeight: 100,
+                skillsIconWidth: 100,
+            },
             skills: [
                 {text: 'Front End', data: 
                     [
