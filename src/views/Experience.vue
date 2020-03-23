@@ -1,6 +1,48 @@
 <template>
     <v-container fluid pa-0>
-        
+        <v-container>
+            <v-row justify="center">
+                <template v-for="(data, i) in exData">
+                    <v-col :cols="isMobileA? 11: 9" :key="i">
+                        <v-card>
+                        <v-row class="pa-0">
+                            <v-col class="pl-6 pt-0 pb-0" :cols="isMobileA? 6: 3">
+                                <v-img height="90" width="120" contain :src="data.src"/>
+                            </v-col>
+                            <v-col class="pt-8 pb-0" justify="center" :cols="isMobileA? 6: 3">
+                                    <v-btn text>
+                                        <a :href="data.href" target="_blank"><span :class="isMobileA? 'title':'headline'">{{data.companyName}}</span></a>
+                                    </v-btn>
+                            </v-col>
+                            <v-col :class="[isMobileA? '': 'pt-8', 'text-center pb-0']" :cols="isMobileA? 12: 6">
+                                <span style="color: #8D6E63;" :class="isMobileA? 'subtitle-1':'title'">{{data.position}}</span>
+                            </v-col>
+                        </v-row>
+                            <v-divider/>
+                            <v-card-text>
+                                    <p class="font-italic font-weight-bold">{{data.aboutCompany}}</p>
+                                    <v-list class="pt-0" dense>
+                                        <v-subheader>
+                                            <span class="title">Duties and Responsibilities</span>
+                                        </v-subheader>
+                                        
+                                        <v-list-item dense v-for="(res, i) in data.dutiesResponsibilities" :key="i+'a'">
+                                            <v-list-item-icon>
+                                                <v-icon x-small>mdi-checkbox-blank-circle</v-icon>
+                                            </v-list-item-icon>
+                                            <v-list-item-content>
+                                                {{res}}
+                                            </v-list-item-content>
+                                        </v-list-item>
+                                    </v-list>
+                            </v-card-text>
+                        </v-card>
+                        
+                    </v-col>
+                </template>
+                
+            </v-row>
+        </v-container>
     </v-container>
 </template>
 
@@ -9,12 +51,28 @@
 export default{
     data(){
         return{
-            skills: [
-                {}
+            exData: [
+                { 
+                    src: require('@/assets/logo_ichijo.png'), 
+                    href: 'http://hrd-s.com/',
+                    companyName: 'ICHIJO HRD',
+                    position: 'Lead Fullstack Web Developer',
+                    dateFromTo: 'Jan 2010 - Present | Philippines, Cavite',
+                    aboutCompany: 'Utilizing our management consulting services to Japanese home builders and well as know-how of product development, we deliver products with superior cost and offer warm-hearted services.',
+                    dutiesResponsibilities: [
+                        'Duties and Responsibilities additional text 1',
+                        'Duties and Responsibilities additional text 2'
+                    ],
+                    ACCOMPLISHMENTS: [
+                        'Accomplishment additional text additional text 1',
+                        'Accomplishment additional text additional text 2'
+                    ]
+                }
             ]
         }
     },
     mounted(){
+        
         // console.log(this.$router.currentRoute.path)
     }
 }

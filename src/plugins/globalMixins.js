@@ -1,7 +1,12 @@
 export default {
     data(){
         return{
-            isMobile: false,
+            isMobileA: false,
+            sizesA: {
+                skillsIconHeight: 100,
+                skillsIconWidth: 100,
+                headersHeight: 100,
+            },
         }
     },
     methods: {
@@ -9,7 +14,7 @@ export default {
             alert(val)
         },
         onResize () {
-            this.isMobile = window.innerWidth < 760
+            this.isMobileA = window.innerWidth < 760
           },
     },
     beforeDestroy () {
@@ -20,5 +25,24 @@ export default {
     mounted(){
         this.onResize()
         window.addEventListener('resize', this.onResize, { passive: true })
+        if(this.isMobileA){
+            this.sizesA.skillsIconHeight = 55
+            this.sizesA.skillsIconWidth = 55
+        }
+
+        if(this.isMobileA){
+            this.sizesA.headersHeight = 70
+        }
+    },
+    created(){
+        // console.log('a')
+        // if (sessionStorage.redirect) {
+        //     const redirect = sessionStorage.redirect
+        //     delete sessionStorage.redirect
+        //     this.$router.push(redirect)
+        // }
+        
+          
+    
     }
 }
