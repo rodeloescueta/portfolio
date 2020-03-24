@@ -23,10 +23,10 @@
                                     <p class="font-italic font-weight-bold">{{data.aboutCompany}}</p>
                                     <v-list class="pt-0" dense>
                                         <v-subheader>
-                                            <span class="title">Duties and Responsibilities</span>
+                                            <span class="title">Responsibilities</span>
                                         </v-subheader>
                                         
-                                        <v-list-item dense v-for="(res, i) in data.dutiesResponsibilities" :key="i+'a'">
+                                        <v-list-item dense v-for="(res, i) in data.responsibilities" :key="i+'a'">
                                             <v-list-item-icon>
                                                 <v-icon x-small>mdi-checkbox-blank-circle</v-icon>
                                             </v-list-item-icon>
@@ -35,6 +35,25 @@
                                             </v-list-item-content>
                                         </v-list-item>
                                     </v-list>
+
+                                    <v-list class="pt-0" dense>
+                                        <v-subheader>
+                                            <span class="title">Accomplishment</span>
+                                        </v-subheader>
+                                        
+                                        <v-list-item dense v-for="(acc, i) in data.accomplishments" :key="i+'a'">
+                                            <v-list-item-icon>
+                                                <v-icon x-small>mdi-checkbox-blank-circle</v-icon>
+                                            </v-list-item-icon>
+                                            <v-list-item-content>
+                                                {{acc}}
+                                            </v-list-item-content>
+                                        </v-list-item>
+                                    </v-list>
+                            </v-card-text>
+
+                            <v-card-text>
+                                <span>{{data.dateFromTo}}</span>
                             </v-card-text>
                         </v-card>
                         
@@ -56,16 +75,22 @@ export default{
                     src: require('@/assets/logo_ichijo.png'), 
                     href: 'http://hrd-s.com/',
                     companyName: 'ICHIJO HRD',
-                    position: 'Lead Fullstack Web Developer',
+                    position: 'Fullstack Web Developer',
                     dateFromTo: 'Jan 2010 - Present | Philippines, Cavite',
                     aboutCompany: 'Utilizing our management consulting services to Japanese home builders and well as know-how of product development, we deliver products with superior cost and offer warm-hearted services.',
-                    dutiesResponsibilities: [
-                        'Duties and Responsibilities additional text 1',
-                        'Duties and Responsibilities additional text 2'
+                    responsibilities: [
+                        'Manages and leads a team of web developer',
+                        'Trainor of system committee member',
+                        'Delegating tasks to team members',
+                        'Develop web application for urgent and special projects',
+                        'Mentoring, providing general guidance and puts work into the foundation and early stages of project development',
+                        'Make sure that the development team and technologies being selected are aligned with the business goals and vision of the company'
                     ],
-                    ACCOMPLISHMENTS: [
-                        'Accomplishment additional text additional text 1',
-                        'Accomplishment additional text additional text 2'
+                    accomplishments: [
+                        'Make significant improvement to the organization like:',
+                        'Introduce Vue(JS Framework) to the organization',
+                        'Introduce CEVN (couchdb, express, node, vue) stack to the inhouse developer',
+                        'Introduce AWS serverless platform (lambda, s3, api-gateway and dynamodb)'
                     ]
                 }
             ]

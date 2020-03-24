@@ -13,7 +13,6 @@
             to="/"
             elevation="1"
           >
-          <!-- { text: 'Rodelo Escueta', heading: 'Full Stack Developer & Serverless Enthusiast', to: '/'}, -->
             <v-col cols="12" class="pb-0 text-center">
               <span class="display-1 font-weight-light" style="color: #008B8B;">Rodelo Escueta</span>
             </v-col>
@@ -74,6 +73,7 @@
         { icon: 'mdi-apps', text: 'Projects', to: 'projects', color: 'indigo accent-3' },
         { icon: 'mdi-email', text: 'Contact', to: 'contact', color: 'amber accent-3' },
       ],
+      quote: 'Don\'t make excuses, find a way!'
     }),
     methods:{
       home(){
